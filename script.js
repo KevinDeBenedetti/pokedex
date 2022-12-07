@@ -43,6 +43,14 @@ function createPokemon(pokemon) {
 function createDetails(pokemon) {
 
 }
+// Fenêtres modales
+//
+// Les variables à utiliser dans
+let body = document.querySelector("body");
+let openModalBtn = document.querySelector(".open-modal-btn");
+let mainWrapper = document.querySelector(".main-wrapper");
+let modal = document.querySelector(".modal");
+let modalTitle = document.querySelector(".modal-title")
 // Événements pour les fenêtres modales
 
 // Nombre de pokemon à afficher à l'utilisateur
