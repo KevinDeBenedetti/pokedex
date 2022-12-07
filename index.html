@@ -16,10 +16,19 @@
         <img src="./img/Pokeball.png" alt="Pokeball">
         <h1>Pokédex</h1>    
     </header>
-    <main id="container">
-        <div id="pokemon-list"></div>
+    <main id="container" class="main-wrapper" aria-hidden="false">
+        <div id="pokemon-list" class="open-modal-btn"></div>
     </main>
-    <section>
-    </section>
+    <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modalTitle">
+        <div>
+            <header>
+                <h2 id="modalTitle" class="modal-title">Modal title</h2>
+            </header>
+            <div>
+                <p>Content of your modal window</p>
+            </div>
+            <button class="modal-close-btn">Close modal</button>
+        </div>
+    </div>
 </body>
 </html>
