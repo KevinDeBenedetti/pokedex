@@ -8,27 +8,85 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <!-- Symbols from fonts.google.com -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>Pokedex</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />    <title>Pokedex</title>
 </head>
 <body>
     <header class="header-main" id="container">
         <img src="./img/Pokeball.png" alt="Pokeball">
-        <h1>Pokédex</h1>    
+        <h1>Pokédex</h1>
     </header>
     <main id="container" class="main-wrapper" aria-hidden="false">
-        <div id="pokemon-list" class="open-modal-btn"></div>
+        <!-- "Bouton" d'ouverture de la modale -->
+        <a href="#" role="button" data-target="#modal" data-toggle="modal">
+            <div id="pokemon-list"></div>  
+        </a>
     </main>
-    <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modalTitle">
-        <div>
-            <header>
-                <h2 id="modalTitle" class="modal-title">Modal title</h2>
-            </header>
-            <div>
-                <p>Content of your modal window</p>
+    <!-- Modale -->
+    <div class="modal" id="modal" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="btn-close" role="button" data-dismiss="dialog"><span class="material-symbols-outlined">arrow_back</span></a>
+                <h2>Pokemon Name</h2>
+                <p class="modal-id" data-id="">#000</p>
             </div>
-            <button class="modal-close-btn">Close modal</button>
+            <section class="modal-body">
+                <div class="type">
+                    <p>Type</p>
+                    <p>Type</p>
+                </div>
+                <p>About</p>
+                <div class="skills">
+                    <div class="weight">
+                        <span class="material-symbols-outlined">upload_file</span>
+                        <p>9,9kg</p>
+                        <p>Weight</p>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined">upload_file</span>
+                        <p>9,9kg</p>
+                        <p>Height</p>
+                    </div>
+                    <div>
+                        <p>Ability 1</p>
+                        <p>Ability 2</p>
+                        <p>Moves</p>
+                    </div>
+                </div>
+                <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat quo, pariatur nisi accusantium tempore culpa cum odit nam fuga? Provident at rem quidem modi sapiente ab corporis consequatur incidunt aliquam.</div>
+                <div class="stats">
+                    <div class="hp">
+                        <p>HP</p>
+                        <p>045</p>
+                        <div></div>
+                    </div>
+                    <div class="atk">
+                        <p>ATK</p>
+                        <p>049</p>
+                        <div></div>
+                    </div>
+                    <div class="def">
+                        <p>DEF</p>
+                        <p>049</p>
+                        <div></div>
+                    </div>
+                    <div class="satk">
+                        <p>SATK</p>
+                        <p>065</p>
+                        <div></div>
+                    </div>
+                    <div class="sdef">
+                        <p>SDEF</p>
+                        <p>065</p>
+                        <div></div>
+                    </div>
+                    <div class="spd">
+                        <p>SPD</p>
+                        <p>045</p>
+                        <div></div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
+    </div> 
 </body>
 </html>
