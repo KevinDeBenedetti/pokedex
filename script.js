@@ -52,12 +52,10 @@ window.onload = () => {
             e.preventDefault();
             // On récupère le data-target
             let target = this.dataset.target
-            
             // On récupère la bonne modale
             let modal = document.querySelector(target);
             // On affiche la modale
             modal.classList.add("show");
-
             // On récupère les boutons de fermeture
             const modalClose = modal.querySelectorAll("[data-dismiss=dialog]");
             
@@ -65,27 +63,7 @@ window.onload = () => {
                 close.addEventListener("click", () => {
                     modal.classList.remove("show");
                 });
-            }
-            // On récupère le num du Pokemon appelé
-            let modalId = document.querySelector(".pokemon-item")
-            modalId.dataset.id
-            
-            function fetchModalPokemon(id) {
-                fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-                    .then(response => response.json())
-                    .then(data => {createPokemon(data);});
-            }
-            // Fonction pour renvoyer les données à l'utilisateur
-            function createPokemon(pokemon) {
-            let detailsId = document.createElement("p");
-            detailsId.textContent = pokemon.id;
-
-            modalHeader.appendChild(detailsId)
-
-            }
-            
-            // On affiche la bonne valeur
-            
+            }            
             // On gère la fermeture lors du clic sur la zone grise
             modal.addEventListener("click", function(){
                 this.classList.remove("show");
@@ -96,8 +74,36 @@ window.onload = () => {
             })
         });
     }
-
 }
-
 // Nombre de pokemon à afficher à l'utilisateur
 fetchPokemons(151);
+
+// Test supp renvoie des datas dans la modale
+let openBtn = document.querySelectorAll(`[data-target="#modal"]`)
+console.log(openBtn)
+
+openBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    let modalId = document.querySelector(".pokemon-item");
+    console.log(modalId.datatset.id)
+})
+fetch('https://pokeapi.co/api/v2/pokemon/1/')
+    .then(response => response.json())
+    .then(data => console.log(data))
+
+// TEST pour le retour des valeurs dans la modale
+            // On récupère le num du Pokemon appelé
+            // let modalId = document.querySelector(".pokemon-item")
+            // modalId.dataset.id
+            // Fonction pour récupérer les données de l'API
+            // async function getData() {
+            //     fetch(`https://pokeapi.co/api/v2/pokemon/1/`)
+            //         .then(response => response.json())
+            //         .then(response => { await
+            //             console.log(response)
+            //             // let detailsId = document.createElement("p")
+            //             // detailsId.textContent = pokemon.id;
+
+            //             // modalHeader.appendChild(detailsId)
+            //    });
+            //}
