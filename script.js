@@ -1,21 +1,22 @@
 let pokeList = document.querySelector('#pokemon-list');
 
-// Fonction pour fetcher les données des pokemon
-function fetchPokemon(id) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-        .then(response => response.json())
-        .then(data => {createPokemon(data)});
-}
 // Fonction pour itérer les pokemon souhaité
 function fetchPokemons(number) {
     for (let i =1; i <= number; i++) {
         fetchPokemon(i);
     }
 }
+// Fonction pour fetcher les données des pokemon
+function fetchPokemon(id) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+        .then(response => response.json())
+        .then(data => {createPokemon(data)});
+}
 // Fonction pour renvoyer les données à l'utilisateur
 function createPokemon(pokemon) {
     let card = document.createElement('div');
     card.classList.add('pokemon-item');
+    card.setAttribute("data-id", `${pokemon.id}`)
 
     let number = document.createElement('p');
     number.textContent = `#${pokemon.id.toString().padStart(3, 0)}`;
@@ -36,12 +37,11 @@ function createPokemon(pokemon) {
     card.appendChild(name);
 
     pokeList.appendChild(card);
-
-    // Test pour data-
-
 }
 
 // Modale
+let modalHeader = document.querySelector(".modal-header")
+
 window.onload = () => {
     // On récupère tous les boutons d'ouverture de modale
     const modalButtons = document.querySelectorAll("[data-toggle=modal]");
@@ -67,9 +67,23 @@ window.onload = () => {
                 });
             }
             // On récupère le num du Pokemon appelé
-            let detailsId = this.dataset.id;
-            // On affiche la bonne destination dans la modale
-            let modalId = document.querySelector(".modal-id")
+            let modalId = document.querySelector(".pokemon-item")
+            modalId.dataset.id
+            
+            function fetchModalPokemon(id) {
+                fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+                    .then(response => response.json())
+                    .then(data => {createPokemon(data);});
+            }
+            // Fonction pour renvoyer les données à l'utilisateur
+            function createPokemon(pokemon) {
+            let detailsId = document.createElement("p");
+            detailsId.textContent = pokemon.id;
+
+            modalHeader.appendChild(detailsId)
+
+            }
+            
             // On affiche la bonne valeur
             
             // On gère la fermeture lors du clic sur la zone grise
