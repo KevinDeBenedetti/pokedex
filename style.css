@@ -38,16 +38,19 @@ header img {
     height: auto;
     border: 1px solid #E0E0E0;
     border-radius: 10px;
+}
+.card {
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.pokemon-item p:first-child {
+.card p:first-child {
     text-align: end;
     padding: 2% 4% 0 0;
     color: #666666;   
 }
-.pokemon-item p:last-child {
+.card p:last-child {
     color: #FFFFFF;
     font-weight: 400;
     text-align: center;
@@ -76,7 +79,7 @@ a {
     background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content{
-    background-color: #666666;
+    background-color: #b8b8b8;
     max-width: 80%;
     height: 90%;
     margin: 7% auto;
@@ -91,7 +94,11 @@ a {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    color: #E0E0E0;
+    color: #FFFFFF;
+    padding: 5% 4%;
+}
+.modal-header h2 {
+    text-transform: capitalize;
 }
 .modal-body{
     overflow-y: auto;
@@ -103,6 +110,15 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.modal-img {
+    box-sizing: content-box;
+    position: relative;
+    top: 40px;
+}
+.modal-img img {
+    height: auto;
+    width: auto;
 }
 .type {
     display: flex;
@@ -130,7 +146,12 @@ a {
     width: 100%;
 }
 .skills div {
-    width: 15%;
+    width: 33%;
+    margin: 0 3%;
+}
+.skills div:nth-of-type(2) {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 .description {
     width: 90%;
