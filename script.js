@@ -23,6 +23,8 @@ function createPokemon(pokemon) {
     card.classList.add('pokemon-item');
     // card.setAttribute("data-id", `${pokemon.id}`)
     let pokemonId = `#${pokemon.id.toString().padStart(3, 0)}`;
+    let pokemonWeight = `${pokemon.weight} kg`;
+    let pokemonHeight = `${pokemon.height} m`;
 
     let pokemonInnerHTML = `
         <div class="card">
@@ -47,17 +49,17 @@ function createPokemon(pokemon) {
                     <div class="skills">
                         <div>
                             <span class="material-symbols-outlined">upload_file</span>
-                            <p>9,9kg</p>
+                            <p>${pokemonWeight}</p>
                             <p>Weight</p>
                         </div>
                         <div>
                             <span class="material-symbols-outlined">upload_file</span>
-                            <p>9,9kg</p>
+                            <p>${pokemonHeight}</p>
                             <p>Height</p>
                         </div>
                         <div>
-                            <p>Ability 1</p>
-                            <p>Ability 2</p>
+                            <p>${pokemon.abilities[0].ability.name}</p>
+                            <p>${pokemon.abilities[1].ability.name}</p>
                             <p>Moves</p>
                         </div>
                     </div>
