@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Ajout favicon -->
     <link rel="icon" type="image/x-icon" href="./img/Pokeball.png">
-    <script src="script.js" async></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <!-- Symbols from fonts.google.com -->
@@ -17,79 +17,6 @@
         <img src="./img/Pokeball.png" alt="Pokeball">
         <h1>Pokédex</h1>
     </header>
-    <main id="container" class="main-wrapper" aria-hidden="false">
-        <!-- "Bouton" d'ouverture de la modale -->
-        <a href="#" role="button" data-target="#modal" data-toggle="modal">
-            <div id="pokemon-list"></div>  
-        </a>
-    </main>
-    <!-- Modale -->
-    <div class="modal" id="modal" role="dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <a href="#" class="btn-close" role="button" data-dismiss="dialog"><span class="material-symbols-outlined">arrow_back</span></a>
-                <h2>Pokemon Name</h2>
-                <p class="modal-id">000</p>
-            </div>
-            <section class="modal-body">
-                <div class="type">
-                    <p>Type</p>
-                    <p>Type</p>
-                </div>
-                <p>About</p>
-                <div class="skills">
-                    <div>
-                        <span class="material-symbols-outlined">upload_file</span>
-                        <p>9,9kg</p>
-                        <p>Weight</p>
-                    </div>
-                    <div>
-                        <span class="material-symbols-outlined">upload_file</span>
-                        <p>9,9kg</p>
-                        <p>Height</p>
-                    </div>
-                    <div>
-                        <p>Ability 1</p>
-                        <p>Ability 2</p>
-                        <p>Moves</p>
-                    </div>
-                </div>
-                <div class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat quo, pariatur nisi accusantium tempore culpa cum odit nam fuga? Provident at rem quidem modi sapiente ab corporis consequatur incidunt aliquam.</div>
-                <div class="stats">
-                        <p>Base Stats</p>                    
-                        <div class="hp">
-                        <p>HP</p>
-                        <p>045</p>
-                        <div></div>
-                    </div>
-                    <div class="atk">
-                        <p>ATK</p>
-                        <p>049</p>
-                        <div></div>
-                    </div>
-                    <div class="def">
-                        <p>DEF</p>
-                        <p>049</p>
-                        <div></div>
-                    </div>
-                    <div class="satk">
-                        <p>SATK</p>
-                        <p>065</p>
-                        <div></div>
-                    </div>
-                    <div class="sdef">
-                        <p>SDEF</p>
-                        <p>065</p>
-                        <div></div>
-                    </div>
-                    <div class="spd">
-                        <p>SPD</p>
-                        <p>045</p>
-                        <div></div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div> 
+    <div id="pokemon-list" class="pokemon-list"></div>
 </body>
 </html>
