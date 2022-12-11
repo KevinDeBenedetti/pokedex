@@ -17,28 +17,31 @@ fetchPokemons(151);
 
 // Fonction pour renvoyer les données à l'utilisateur
 function createPokemon(pokemon) {
-    // console.log(pokemon);
+    console.log(pokemon);
     
     let card = document.createElement('div');
     card.classList.add('pokemon-item');
     // card.setAttribute("data-id", `${pokemon.id}`)
-    let pokemonId = `#${pokemon.id.toString().padStart(3, 0)}`
+    let pokemonId = `#${pokemon.id.toString().padStart(3, 0)}`;
 
     let pokemonInnerHTML = `
-        <p>${pokemonId}</p>
-        <div class="img-container"><img src="${pokemon.sprites.front_default}" alt = "pokemon image ${pokemon.name}"></div>
-        <p>${pokemon.name}</p>
+        <div class="card">
+            <p>${pokemonId}</p>
+            <div class="img-container"><img src="${pokemon.sprites.front_default}" alt = "pokemon image ${pokemon.name}"></div>
+            <p>${pokemon.name}</p>
+        </div>
         <div id="pokemonModal_${pokemon.id}" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="material-symbols-outlined" id="close_${pokemon.id}" class="close">arrow_back</span>
-                    <h2>Pokemon Name</h2>
+                    <h2>${pokemon.name}</h2>
                     <p>${pokemonId}</p>
                 </div>
+                <div class="modal-img"><img src="${pokemon.sprites.front_default}" alt = "pokemon image ${pokemon.name}"/></div>
                 <section class="modal-body">
                     <div class="type">
-                        <p>Type</p>
-                        <p>Type</p>
+                        <p>${pokemon.types[0].type.name}</p>
+                        <p>${pokemon.types[1].type.name}</p>
                     </div>
                     <p>About</p>
                     <div class="skills">
